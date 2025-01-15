@@ -11,7 +11,7 @@ class Calculadora {
     }
 
     private inicializarEventos(): void {
-        // Eventos para números y punto decimal
+
         document.querySelectorAll('.btn').forEach(button => {
             button.addEventListener('click', (e) => {
                 const valor = (e.target as HTMLButtonElement).textContent!;
@@ -19,7 +19,6 @@ class Calculadora {
             });
         });
 
-        // Eventos para operadores
         document.querySelectorAll('.op').forEach(button => {
             button.addEventListener('click', (e) => {
                 const operador = (e.target as HTMLButtonElement).textContent!;
@@ -27,12 +26,10 @@ class Calculadora {
             });
         });
 
-        // Evento para igual
         document.getElementById('equals')?.addEventListener('click', () => {
             this.calcular();
         });
 
-        // Evento para limpiar
         document.getElementById('clear')?.addEventListener('click', () => {
             this.limpiar();
         });
@@ -105,5 +102,4 @@ class Calculadora {
     }
 }
 
-// Inicializar la calculadora
 new Calculadora();
